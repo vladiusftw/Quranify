@@ -107,7 +107,9 @@ const RenderItem = ({ item, index, type }) => {
           fontSize: hp(2),
         }}
       >
-        {item.name_arabic}
+        {type == "Surah"
+          ? item.name_arabic
+          : item.verses[0].chapter_name_arabic}
       </Text>
     </TouchableOpacity>
   );
