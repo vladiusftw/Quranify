@@ -12,6 +12,7 @@ import { Amiri_700Bold } from "@expo-google-fonts/amiri";
 import { Scheherazade_700Bold } from "@expo-google-fonts/scheherazade";
 import { SafeAreaView, Text } from "react-native";
 import Quran from "./pages/Quran";
+import QuranInfo from "./pages/QuranInfo";
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Quran" component={Quran} />
+        <Stack.Screen name="QuranInfo" component={QuranInfo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

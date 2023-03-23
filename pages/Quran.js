@@ -129,7 +129,7 @@ const Quran = ({ navigation }) => {
             {currTab == "Page" ? (
               <FlatList
                 data={pages.filter((a) =>
-                  search.length != 0 ? (a.id + "").includes(search) : a
+                  search.length != 0 ? (a.id + "").startsWith(search) : a
                 )}
                 renderItem={({ item, index }) => (
                   <RenderItem item={item} index={index} type={"Page"} />

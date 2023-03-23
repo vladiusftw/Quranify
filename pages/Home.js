@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
   bottomBar: {
     flex: 0.12,
     backgroundColor: "#121931",
-
     justifyContent: "center",
     paddingHorizontal: wp(12),
   },

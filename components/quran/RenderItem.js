@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState, memo, useEffect } from "react";
 import {
   FlatList,
@@ -15,6 +16,7 @@ import {
 } from "react-native-responsive-screen";
 
 const RenderItem = ({ item, index, type }) => {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={{
@@ -26,6 +28,11 @@ const RenderItem = ({ item, index, type }) => {
         borderBottomWidth: 1,
         marginBottom: hp(1.5),
       }}
+      onPress={() =>
+        navigation.navigate("QuranInfo", {
+          page_number: type == "Surah" ? item.pages : item.id,
+        })
+      }
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
