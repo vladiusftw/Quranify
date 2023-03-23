@@ -1076,10 +1076,20 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/amiri@^0.2.3":
+  "integrity" "sha512-kjyddy14Jvvnw0kFn5SRItu8QdEVyuPF908eOfLv6+9wWi5wVgQMpQsYz94gcoEojFsEb6suNB8M+jWId7eRCw=="
+  "resolved" "https://registry.npmjs.org/@expo-google-fonts/amiri/-/amiri-0.2.3.tgz"
+  "version" "0.2.3"
+
 "@expo-google-fonts/poppins@^0.2.3":
   "integrity" "sha512-PXkur1ZY/puy1PwVFYPJx8qiI3dtBzC2ig1bo53swCt7/sI7krCGYRO6hLBNp15M0kcNh2J4cCR9ZQyFxsving=="
   "resolved" "https://registry.npmjs.org/@expo-google-fonts/poppins/-/poppins-0.2.3.tgz"
   "version" "0.2.3"
+
+"@expo-google-fonts/scheherazade@^0.2.0":
+  "integrity" "sha512-/3YvLtQ2rPhHDalLn2kRfhpcB09+NKn3n7yOmVTtkZTyjVk6ROza8YzBLf0Khdg1eOckjnAIUM4YJ6yJpd2nXQ=="
+  "resolved" "https://registry.npmjs.org/@expo-google-fonts/scheherazade/-/scheherazade-0.2.0.tgz"
+  "version" "0.2.0"
 
 "@expo/bunyan@^4.0.0", "@expo/bunyan@4.0.0":
   "integrity" "sha512-Ydf4LidRB/EBI+YrB+cVLqIseiRfjUI/AeHBgjGMtq3GroraDu81OV7zqophRgupngoL3iS3JUMDMnxO7g39qA=="

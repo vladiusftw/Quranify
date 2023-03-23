@@ -8,7 +8,10 @@ import {
   Poppins_600SemiBold,
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
+import { Amiri_700Bold } from "@expo-google-fonts/amiri";
+import { Scheherazade_700Bold } from "@expo-google-fonts/scheherazade";
 import { SafeAreaView, Text } from "react-native";
+import Quran from "./pages/Quran";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +20,8 @@ export default function App() {
     Poppins_500Medium,
     Poppins_600SemiBold,
     Poppins_700Bold,
+    Amiri_700Bold,
+    Scheherazade_700Bold,
   });
   if (!fontsLoaded)
     return (
@@ -28,6 +33,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Quran" component={Quran} />
       </Stack.Navigator>
     </NavigationContainer>
   );

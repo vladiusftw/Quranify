@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": false,
   "name_simple": "Al-Fatihah",
   "name_arabic": "الفاتحة",
@@ -10,7 +10,7 @@
  },
  {
   "id": 2,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Baqarah",
   "name_arabic": "البقرة",
@@ -19,7 +19,7 @@
  },
  {
   "id": 3,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Ali 'Imran",
   "name_arabic": "آل عمران",
@@ -28,7 +28,7 @@
  },
  {
   "id": 4,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "An-Nisa",
   "name_arabic": "النساء",
@@ -37,7 +37,7 @@
  },
  {
   "id": 5,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Ma'idah",
   "name_arabic": "المائدة",
@@ -46,7 +46,7 @@
  },
  {
   "id": 6,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-An'am",
   "name_arabic": "الأنعام",
@@ -55,7 +55,7 @@
  },
  {
   "id": 7,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-A'raf",
   "name_arabic": "الأعراف",
@@ -64,7 +64,7 @@
  },
  {
   "id": 8,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Anfal",
   "name_arabic": "الأنفال",
@@ -73,7 +73,7 @@
  },
  {
   "id": 9,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": false,
   "name_simple": "At-Tawbah",
   "name_arabic": "التوبة",
@@ -82,7 +82,7 @@
  },
  {
   "id": 10,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Yunus",
   "name_arabic": "يونس",
@@ -91,7 +91,7 @@
  },
  {
   "id": 11,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Hud",
   "name_arabic": "هود",
@@ -100,7 +100,7 @@
  },
  {
   "id": 12,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Yusuf",
   "name_arabic": "يوسف",
@@ -109,7 +109,7 @@
  },
  {
   "id": 13,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Ar-Ra'd",
   "name_arabic": "الرعد",
@@ -118,7 +118,7 @@
  },
  {
   "id": 14,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ibrahim",
   "name_arabic": "ابراهيم",
@@ -127,7 +127,7 @@
  },
  {
   "id": 15,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Hijr",
   "name_arabic": "الحجر",
@@ -136,7 +136,7 @@
  },
  {
   "id": 16,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Nahl",
   "name_arabic": "النحل",
@@ -145,7 +145,7 @@
  },
  {
   "id": 17,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Isra",
   "name_arabic": "الإسراء",
@@ -154,7 +154,7 @@
  },
  {
   "id": 18,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Kahf",
   "name_arabic": "الكهف",
@@ -163,7 +163,7 @@
  },
  {
   "id": 19,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Maryam",
   "name_arabic": "مريم",
@@ -172,7 +172,7 @@
  },
  {
   "id": 20,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Taha",
   "name_arabic": "طه",
@@ -181,7 +181,7 @@
  },
  {
   "id": 21,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Anbya",
   "name_arabic": "الأنبياء",
@@ -190,7 +190,7 @@
  },
  {
   "id": 22,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Hajj",
   "name_arabic": "الحج",
@@ -199,7 +199,7 @@
  },
  {
   "id": 23,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Mu'minun",
   "name_arabic": "المؤمنون",
@@ -208,7 +208,7 @@
  },
  {
   "id": 24,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "An-Nur",
   "name_arabic": "النور",
@@ -217,7 +217,7 @@
  },
  {
   "id": 25,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Furqan",
   "name_arabic": "الفرقان",
@@ -226,7 +226,7 @@
  },
  {
   "id": 26,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ash-Shu'ara",
   "name_arabic": "الشعراء",
@@ -235,7 +235,7 @@
  },
  {
   "id": 27,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Naml",
   "name_arabic": "النمل",
@@ -244,7 +244,7 @@
  },
  {
   "id": 28,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qasas",
   "name_arabic": "القصص",
@@ -253,7 +253,7 @@
  },
  {
   "id": 29,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-'Ankabut",
   "name_arabic": "العنكبوت",
@@ -262,7 +262,7 @@
  },
  {
   "id": 30,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ar-Rum",
   "name_arabic": "الروم",
@@ -271,7 +271,7 @@
  },
  {
   "id": 31,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Luqman",
   "name_arabic": "لقمان",
@@ -280,7 +280,7 @@
  },
  {
   "id": 32,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "As-Sajdah",
   "name_arabic": "السجدة",
@@ -289,7 +289,7 @@
  },
  {
   "id": 33,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Ahzab",
   "name_arabic": "الأحزاب",
@@ -298,7 +298,7 @@
  },
  {
   "id": 34,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Saba",
   "name_arabic": "سبإ",
@@ -307,7 +307,7 @@
  },
  {
   "id": 35,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Fatir",
   "name_arabic": "فاطر",
@@ -316,7 +316,7 @@
  },
  {
   "id": 36,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ya-Sin",
   "name_arabic": "يس",
@@ -325,7 +325,7 @@
  },
  {
   "id": 37,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "As-Saffat",
   "name_arabic": "الصافات",
@@ -334,7 +334,7 @@
  },
  {
   "id": 38,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Sad",
   "name_arabic": "ص",
@@ -343,7 +343,7 @@
  },
  {
   "id": 39,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Az-Zumar",
   "name_arabic": "الزمر",
@@ -352,7 +352,7 @@
  },
  {
   "id": 40,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ghafir",
   "name_arabic": "غافر",
@@ -361,7 +361,7 @@
  },
  {
   "id": 41,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Fussilat",
   "name_arabic": "فصلت",
@@ -370,7 +370,7 @@
  },
  {
   "id": 42,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ash-Shuraa",
   "name_arabic": "الشورى",
@@ -379,7 +379,7 @@
  },
  {
   "id": 43,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Az-Zukhruf",
   "name_arabic": "الزخرف",
@@ -388,7 +388,7 @@
  },
  {
   "id": 44,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ad-Dukhan",
   "name_arabic": "الدخان",
@@ -397,7 +397,7 @@
  },
  {
   "id": 45,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Jathiyah",
   "name_arabic": "الجاثية",
@@ -406,7 +406,7 @@
  },
  {
   "id": 46,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Ahqaf",
   "name_arabic": "الأحقاف",
@@ -415,7 +415,7 @@
  },
  {
   "id": 47,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Muhammad",
   "name_arabic": "محمد",
@@ -424,7 +424,7 @@
  },
  {
   "id": 48,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Fath",
   "name_arabic": "الفتح",
@@ -433,7 +433,7 @@
  },
  {
   "id": 49,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Hujurat",
   "name_arabic": "الحجرات",
@@ -442,7 +442,7 @@
  },
  {
   "id": 50,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Qaf",
   "name_arabic": "ق",
@@ -451,7 +451,7 @@
  },
  {
   "id": 51,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Adh-Dhariyat",
   "name_arabic": "الذاريات",
@@ -460,7 +460,7 @@
  },
  {
   "id": 52,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "At-Tur",
   "name_arabic": "الطور",
@@ -469,7 +469,7 @@
  },
  {
   "id": 53,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Najm",
   "name_arabic": "النجم",
@@ -478,7 +478,7 @@
  },
  {
   "id": 54,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qamar",
   "name_arabic": "القمر",
@@ -487,7 +487,7 @@
  },
  {
   "id": 55,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Ar-Rahman",
   "name_arabic": "الرحمن",
@@ -496,7 +496,7 @@
  },
  {
   "id": 56,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Waqi'ah",
   "name_arabic": "الواقعة",
@@ -505,7 +505,7 @@
  },
  {
   "id": 57,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Hadid",
   "name_arabic": "الحديد",
@@ -514,7 +514,7 @@
  },
  {
   "id": 58,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Mujadila",
   "name_arabic": "المجادلة",
@@ -523,7 +523,7 @@
  },
  {
   "id": 59,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Hashr",
   "name_arabic": "الحشر",
@@ -532,7 +532,7 @@
  },
  {
   "id": 60,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Mumtahanah",
   "name_arabic": "الممتحنة",
@@ -541,7 +541,7 @@
  },
  {
   "id": 61,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "As-Saf",
   "name_arabic": "الصف",
@@ -550,7 +550,7 @@
  },
  {
   "id": 62,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Jumu'ah",
   "name_arabic": "الجمعة",
@@ -559,7 +559,7 @@
  },
  {
   "id": 63,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Munafiqun",
   "name_arabic": "المنافقون",
@@ -568,7 +568,7 @@
  },
  {
   "id": 64,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "At-Taghabun",
   "name_arabic": "التغابن",
@@ -577,7 +577,7 @@
  },
  {
   "id": 65,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "At-Talaq",
   "name_arabic": "الطلاق",
@@ -586,7 +586,7 @@
  },
  {
   "id": 66,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "At-Tahrim",
   "name_arabic": "التحريم",
@@ -595,7 +595,7 @@
  },
  {
   "id": 67,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Mulk",
   "name_arabic": "الملك",
@@ -604,7 +604,7 @@
  },
  {
   "id": 68,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qalam",
   "name_arabic": "القلم",
@@ -613,7 +613,7 @@
  },
  {
   "id": 69,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Haqqah",
   "name_arabic": "الحاقة",
@@ -622,7 +622,7 @@
  },
  {
   "id": 70,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Ma'arij",
   "name_arabic": "المعارج",
@@ -631,7 +631,7 @@
  },
  {
   "id": 71,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Nuh",
   "name_arabic": "نوح",
@@ -640,7 +640,7 @@
  },
  {
   "id": 72,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Jinn",
   "name_arabic": "الجن",
@@ -649,7 +649,7 @@
  },
  {
   "id": 73,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Muzzammil",
   "name_arabic": "المزمل",
@@ -658,7 +658,7 @@
  },
  {
   "id": 74,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Muddaththir",
   "name_arabic": "المدثر",
@@ -667,7 +667,7 @@
  },
  {
   "id": 75,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qiyamah",
   "name_arabic": "القيامة",
@@ -676,7 +676,7 @@
  },
  {
   "id": 76,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Insan",
   "name_arabic": "الانسان",
@@ -685,7 +685,7 @@
  },
  {
   "id": 77,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Mursalat",
   "name_arabic": "المرسلات",
@@ -694,7 +694,7 @@
  },
  {
   "id": 78,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Naba",
   "name_arabic": "النبإ",
@@ -703,7 +703,7 @@
  },
  {
   "id": 79,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Nazi'at",
   "name_arabic": "النازعات",
@@ -712,7 +712,7 @@
  },
  {
   "id": 80,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "'Abasa",
   "name_arabic": "عبس",
@@ -721,7 +721,7 @@
  },
  {
   "id": 81,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "At-Takwir",
   "name_arabic": "التكوير",
@@ -730,7 +730,7 @@
  },
  {
   "id": 82,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Infitar",
   "name_arabic": "الإنفطار",
@@ -739,7 +739,7 @@
  },
  {
   "id": 83,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Mutaffifin",
   "name_arabic": "المطففين",
@@ -748,7 +748,7 @@
  },
  {
   "id": 84,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Inshiqaq",
   "name_arabic": "الإنشقاق",
@@ -757,7 +757,7 @@
  },
  {
   "id": 85,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Buruj",
   "name_arabic": "البروج",
@@ -766,7 +766,7 @@
  },
  {
   "id": 86,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "At-Tariq",
   "name_arabic": "الطارق",
@@ -775,7 +775,7 @@
  },
  {
   "id": 87,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-A'la",
   "name_arabic": "الأعلى",
@@ -784,7 +784,7 @@
  },
  {
   "id": 88,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Ghashiyah",
   "name_arabic": "الغاشية",
@@ -793,7 +793,7 @@
  },
  {
   "id": 89,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Fajr",
   "name_arabic": "الفجر",
@@ -802,7 +802,7 @@
  },
  {
   "id": 90,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Balad",
   "name_arabic": "البلد",
@@ -811,7 +811,7 @@
  },
  {
   "id": 91,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ash-Shams",
   "name_arabic": "الشمس",
@@ -820,7 +820,7 @@
  },
  {
   "id": 92,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Layl",
   "name_arabic": "الليل",
@@ -829,7 +829,7 @@
  },
  {
   "id": 93,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ad-Duhaa",
   "name_arabic": "الضحى",
@@ -838,7 +838,7 @@
  },
  {
   "id": 94,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Ash-Sharh",
   "name_arabic": "الشرح",
@@ -847,7 +847,7 @@
  },
  {
   "id": 95,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "At-Tin",
   "name_arabic": "التين",
@@ -856,7 +856,7 @@
  },
  {
   "id": 96,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-'Alaq",
   "name_arabic": "العلق",
@@ -865,7 +865,7 @@
  },
  {
   "id": 97,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qadr",
   "name_arabic": "القدر",
@@ -874,7 +874,7 @@
  },
  {
   "id": 98,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Al-Bayyinah",
   "name_arabic": "البينة",
@@ -883,7 +883,7 @@
  },
  {
   "id": 99,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "Az-Zalzalah",
   "name_arabic": "الزلزلة",
@@ -892,7 +892,7 @@
  },
  {
   "id": 100,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-'Adiyat",
   "name_arabic": "العاديات",
@@ -901,7 +901,7 @@
  },
  {
   "id": 101,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Qari'ah",
   "name_arabic": "القارعة",
@@ -910,7 +910,7 @@
  },
  {
   "id": 102,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "At-Takathur",
   "name_arabic": "التكاثر",
@@ -919,7 +919,7 @@
  },
  {
   "id": 103,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-'Asr",
   "name_arabic": "العصر",
@@ -928,7 +928,7 @@
  },
  {
   "id": 104,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Humazah",
   "name_arabic": "الهمزة",
@@ -937,7 +937,7 @@
  },
  {
   "id": 105,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Fil",
   "name_arabic": "الفيل",
@@ -946,7 +946,7 @@
  },
  {
   "id": 106,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Quraysh",
   "name_arabic": "قريش",
@@ -955,7 +955,7 @@
  },
  {
   "id": 107,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Ma'un",
   "name_arabic": "الماعون",
@@ -964,7 +964,7 @@
  },
  {
   "id": 108,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Kawthar",
   "name_arabic": "الكوثر",
@@ -973,7 +973,7 @@
  },
  {
   "id": 109,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Kafirun",
   "name_arabic": "الكافرون",
@@ -982,7 +982,7 @@
  },
  {
   "id": 110,
-  "revelation_place": "madinah",
+  "revelation_place": "medinian",
   "bismillah_pre": true,
   "name_simple": "An-Nasr",
   "name_arabic": "النصر",
@@ -991,7 +991,7 @@
  },
  {
   "id": 111,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Masad",
   "name_arabic": "المسد",
@@ -1000,7 +1000,7 @@
  },
  {
   "id": 112,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Ikhlas",
   "name_arabic": "الإخلاص",
@@ -1009,7 +1009,7 @@
  },
  {
   "id": 113,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "Al-Falaq",
   "name_arabic": "الفلق",
@@ -1018,7 +1018,7 @@
  },
  {
   "id": 114,
-  "revelation_place": "makkah",
+  "revelation_place": "meccan",
   "bismillah_pre": true,
   "name_simple": "An-Nas",
   "name_arabic": "الناس",

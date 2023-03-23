@@ -11,12 +11,13 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import DidYouKnow from "../components/home/DidYouKnow";
 import LastRead from "../components/home/LastRead";
 import Tasbeeh from "../components/home/Tasbeeh";
 var moment = require("moment-hijri");
 moment.locale("en");
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const date = new Date();
   const months = {
     1: "Muharram",
@@ -35,7 +36,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
-        <View style={{ paddingHorizontal: wp(6) }}>
+        <View style={{ paddingHorizontal: wp(6), paddingTop: hp(1) }}>
           <Text style={styles.title}>Quranify</Text>
           <Text style={styles.date}>
             {date.toLocaleDateString("en-us", { weekday: "long" })}
@@ -45,6 +46,7 @@ const Home = () => {
           } ${moment().format("iYYYY")} AH`}</Text>
           <LastRead />
           <Tasbeeh />
+          <DidYouKnow />
         </View>
       </SafeAreaView>
 
@@ -62,7 +64,10 @@ const Home = () => {
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quran}>
+          <TouchableOpacity
+            style={styles.quran}
+            onPress={() => navigation.navigate("Quran")}
+          >
             <Image
               source={require("../assets/quran-icon-grey.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
