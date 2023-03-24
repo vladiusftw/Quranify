@@ -123,11 +123,11 @@ const RenderItem = ({ item, index, type }) => {
 };
 
 const areEqual = (prevProps, nextProps) => {
-  const { id } = nextProps;
-  const { id: id2 } = prevProps;
+  const { item } = nextProps;
+  const { item: item2 } = prevProps;
 
   /*if the props are equal, it won't update*/
-  const isSelectedEqual = id === id2;
+  const isSelectedEqual = item === item2;
 
   return isSelectedEqual;
 };

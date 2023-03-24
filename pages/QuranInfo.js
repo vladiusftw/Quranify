@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -11,10 +12,16 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import Page from "../components/quranInfo/Page";
 import data from "../quran.json";
 
 const QuranInfo = ({ navigation }) => {
   const [currItem, setCurrItem] = useState(data[0]);
+  const [currVerse, setCurrVerse] = useState({
+    page_num: 0,
+    verse_key: "0:0",
+  });
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -45,6 +52,21 @@ const QuranInfo = ({ navigation }) => {
           </View>
         </View>
       </View>
+      <FlatList
+        data={data}
+        renderItem={({ item, index }) => (
+          <Page
+            item={item}
+            index={index}
+            currVerse={currVerse}
+            setCurrVerse={setCurrVerse}
+            setIsVisible={setIsVisible}
+          />
+        )}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        initialNumToRender={2}
+      />
     </View>
   );
 };
@@ -60,6 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#121931",
     paddingVertical: hp(3),
     paddingHorizontal: wp(6),
+    marginBottom: hp(2),
   },
   back: {
     width: wp(6),
