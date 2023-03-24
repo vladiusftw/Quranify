@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Alert,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -12,40 +11,13 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import DidYouKnow from "../components/home/DidYouKnow";
-import LastRead from "../components/home/LastRead";
-var moment = require("moment-hijri");
-moment.locale("en");
 
-const Home = ({ navigation }) => {
-  const date = new Date();
-  const months = {
-    1: "Muharram",
-    2: "Safar",
-    3: "Rabi' I",
-    4: "Rabi' II",
-    5: "Jumada I",
-    6: "Jumada II",
-    7: "Rajab",
-    8: "Sha'ban",
-    9: "Ramadan",
-    10: "Shawwal",
-    11: "Dhu'l-Qi'dah",
-    12: "Dhu'l-Hijjah",
-  };
+const Tasbih = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
         <View style={{ paddingHorizontal: wp(6), paddingTop: hp(1) }}>
           <Text style={styles.title}>Quranify</Text>
-          <Text style={styles.date}>
-            {date.toLocaleDateString("en-us", { weekday: "long" })}
-          </Text>
-          <Text style={styles.hijri}>{`${moment().format("iD")} ${
-            months[moment().format("iM")]
-          } ${moment().format("iYYYY")} AH`}</Text>
-          <LastRead />
-          <DidYouKnow />
         </View>
       </SafeAreaView>
 
@@ -60,10 +32,10 @@ const Home = ({ navigation }) => {
         >
           <TouchableOpacity
             style={styles.home}
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate("Home")}
           >
             <Image
-              source={require("../assets/home-icon-purple.png")}
+              source={require("../assets/home-icon-grey.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
@@ -76,12 +48,9 @@ const Home = ({ navigation }) => {
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.tasbih}
-            onPress={() => navigation.navigate("Tasbih")}
-          >
+          <TouchableOpacity style={styles.tasbih}>
             <Image
-              source={require("../assets/tasbih.png")}
+              source={require("../assets/tasbih-purple.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
@@ -100,7 +69,7 @@ const Home = ({ navigation }) => {
   );
 };
 
-export default Home;
+export default Tasbih;
 
 const styles = StyleSheet.create({
   container: {

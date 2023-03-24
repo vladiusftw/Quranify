@@ -13,9 +13,16 @@ import {
   Scheherazade_700Bold,
   useFonts as useFonts3,
 } from "@expo-google-fonts/scheherazade";
-import { SafeAreaView, Text, I18nManager } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  I18nManager,
+  ActivityIndicator,
+} from "react-native";
 import Quran from "./pages/Quran";
 import QuranInfo from "./pages/QuranInfo";
+import Tasbih from "./pages/Tasbih";
+import { View } from "react-native";
 
 I18nManager.allowRTL(true);
 
@@ -37,9 +44,16 @@ export default function App() {
   });
   if (!fontsLoaded || !fontsLoaded2 || !fontsLoaded3)
     return (
-      <SafeAreaView>
-        <Text>loading...</Text>
-      </SafeAreaView>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "#040C23",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <ActivityIndicator size={"large"} />
+      </View>
     );
   return (
     <NavigationContainer>
@@ -47,6 +61,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Quran" component={Quran} />
         <Stack.Screen name="QuranInfo" component={QuranInfo} />
+        <Stack.Screen name="Tasbih" component={Tasbih} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -16,6 +16,7 @@ import {
 import data from "../chapters.json";
 import pages from "../quran.json";
 import RenderItem from "../components/quran/RenderItem";
+import { FlashList } from "@shopify/flash-list";
 
 const Quran = ({ navigation }) => {
   const [currTab, setCurrTab] = useState("Surah");
@@ -100,7 +101,7 @@ const Quran = ({ navigation }) => {
             }}
           >
             {currTab == "Surah" ? (
-              <FlatList
+              <FlashList
                 data={data.filter((a) =>
                   search.length != 0
                     ? a.name_simple
@@ -111,9 +112,8 @@ const Quran = ({ navigation }) => {
                 renderItem={({ item, index }) => (
                   <RenderItem item={item} index={index} type={"Surah"} />
                 )}
-                keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
-                initialNumToRender={8}
+                estimatedItemSize={hp(6)}
               />
             ) : (
               <></>
@@ -127,16 +127,15 @@ const Quran = ({ navigation }) => {
             }}
           >
             {currTab == "Page" ? (
-              <FlatList
+              <FlashList
                 data={pages.filter((a) =>
                   search.length != 0 ? (a.id + "").startsWith(search) : a
                 )}
                 renderItem={({ item, index }) => (
                   <RenderItem item={item} index={index} type={"Page"} />
                 )}
-                keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
-                initialNumToRender={8}
+                estimatedItemSize={hp(6)}
               />
             ) : (
               <></>
@@ -151,6 +150,7 @@ const Quran = ({ navigation }) => {
             flexDirection: "row",
             justifyContent: "space-between",
             marginTop: hp(-2),
+            alignItems: "center",
           }}
         >
           <TouchableOpacity
@@ -168,7 +168,19 @@ const Quran = ({ navigation }) => {
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.dua}>
+          <TouchableOpacity
+            style={styles.tasbih}
+            onPress={() => navigation.navigate("Tasbih")}
+          >
+            <Image
+              source={require("../assets/tasbih.png")}
+              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.dua}
+            onPress={() => Alert.alert("Duas Coming Soon!")}
+          >
             <Image
               source={require("../assets/dua-icon-grey.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
@@ -191,13 +203,17 @@ const styles = StyleSheet.create({
     flex: 0.12,
     backgroundColor: "#121931",
     justifyContent: "center",
-    paddingHorizontal: wp(12),
+    paddingHorizontal: wp(8),
   },
   home: {
     width: wp(12),
     height: hp(6),
   },
   quran: {
+    width: wp(12),
+    height: hp(6),
+  },
+  tasbih: {
     width: wp(12),
     height: hp(6),
   },

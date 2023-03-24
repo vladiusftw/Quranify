@@ -34,6 +34,7 @@ const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
             paddingHorizontal: wp(4),
             width: "100%",
             marginBottom: hp(2),
+            marginTop: hp(1),
           }}
           key={item2.id + "title"}
         >
@@ -71,7 +72,6 @@ const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
         key={item2.verse_key}
         onPress={() => {
           setCurrVerse({ page_num: item.id, verse_key: item2.verse_key });
-          setIsVisible(true);
         }}
       >
         {`${item2.text_uthmani} `}
@@ -84,8 +84,9 @@ const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
             textAlign: "center",
           }}
         >
-          {` ${item2.verse_number} `}
+          {`( ${item2.verse_number} )`}
         </Text>
+        <Text> </Text>
       </Text>
     );
   }
@@ -156,7 +157,7 @@ export default memo(Page, areEqual);
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: wp(6),
+    paddingHorizontal: wp(4),
     marginBottom: hp(0.5),
     flexDirection: "row-reverse",
     flexWrap: "wrap",
@@ -181,7 +182,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "Scheherazade_700Bold",
     color: "white",
-    fontSize: hp(2.6),
+    fontSize: hp(2.8),
     writingDirection: "rtl",
     lineHeight: 50,
   },

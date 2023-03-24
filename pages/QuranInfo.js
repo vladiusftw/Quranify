@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FlatList,
   Image,
@@ -14,14 +14,17 @@ import {
 } from "react-native-responsive-screen";
 import Page from "../components/quranInfo/Page";
 import data from "../quran.json";
+import { FlashList } from "@shopify/flash-list";
 
-const QuranInfo = ({ navigation }) => {
+const QuranInfo = ({ navigation, route }) => {
   const [currItem, setCurrItem] = useState(data[0]);
   const [currVerse, setCurrVerse] = useState({
     page_num: 0,
     verse_key: "0:0",
   });
   const [isVisible, setIsVisible] = useState(false);
+  const { page_number } = route.params;
+  const ref = useRef();
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -39,7 +42,7 @@ const QuranInfo = ({ navigation }) => {
           >
             <Image
               source={require("../assets/back.png")}
-              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+              style={{ width: "60%", height: "60%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
           <Text style={styles.title}>
@@ -52,7 +55,19 @@ const QuranInfo = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <FlatList
+      <FlashList
+        ref={ref}
+        initialScrollIndex={page_number - 1}
+        onScrollToIndexFailed={(info) => {
+          console.log("error");
+          const wait = new Promise((resolve) => setTimeout(resolve, 200));
+          wait.then(() => {
+            ref.current?.scrollToIndex({
+              index: page_number - 1,
+              animated: true,
+            });
+          });
+        }}
         data={data}
         renderItem={({ item, index }) => (
           <Page
@@ -63,9 +78,13 @@ const QuranInfo = ({ navigation }) => {
             setIsVisible={setIsVisible}
           />
         )}
-        keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        initialNumToRender={2}
+        estimatedItemSize={930}
+        extraData={currVerse}
+        onViewableItemsChanged={(info) => {
+          if (info.viewableItems.length != 0)
+            setCurrItem(info.viewableItems[0].item);
+        }}
       />
     </View>
   );
@@ -85,8 +104,9 @@ const styles = StyleSheet.create({
     marginBottom: hp(2),
   },
   back: {
-    width: wp(6),
-    height: hp(2),
+    width: wp(10),
+    height: hp(4),
+    justifyContent: "center",
   },
   title: {
     position: "absolute",

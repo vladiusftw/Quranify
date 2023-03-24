@@ -14,9 +14,9 @@ const DidYouKnow = () => {
   };
   return (
     <ScrollView
-      style={{ marginTop: hp(2), height: hp(45) }}
+      style={{ marginTop: hp(2.5), height: hp(49.5) }}
       onContentSizeChange={onContentSizeChange}
-      scrollEnabled={contentHeight > hp(45)}
+      scrollEnabled={contentHeight > hp(49.5)}
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.container}>
