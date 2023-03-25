@@ -8,6 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -15,13 +16,27 @@ import {
 } from "react-native-responsive-screen";
 import data from "../chapters.json";
 import pages from "../quran.json";
+import juz from "../juz.json";
 import RenderItem from "../components/quran/RenderItem";
 import { FlashList } from "@shopify/flash-list";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Quran = ({ navigation }) => {
   const [currTab, setCurrTab] = useState("Surah");
   const [search, setSearch] = useState("");
-
+  const getBookmark = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
+      const value = jsonValue != null ? JSON.parse(jsonValue) : null;
+      if (value == null) alert("No bookmark saved!");
+      else {
+        navigation.navigate("QuranInfo", { page_number: value.page_number });
+      }
+    } catch (e) {
+      // error reading value
+      alert("An error has occured!");
+    }
+  };
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
@@ -34,7 +49,10 @@ const Quran = ({ navigation }) => {
             }}
           >
             <Text style={styles.title}>Quranify</Text>
-            <TouchableOpacity style={styles.bookmark}>
+            <TouchableOpacity
+              style={styles.bookmark}
+              onPress={() => getBookmark()}
+            >
               <Image
                 source={require("../assets/bookmark.png")}
                 style={{ width: "100%", height: "100%", resizeMode: "contain" }}
@@ -97,7 +115,6 @@ const Quran = ({ navigation }) => {
             style={{
               height: hp(62),
               marginTop: hp(2),
-              display: currTab == "Surah" ? "flex" : "none",
             }}
           >
             {currTab == "Surah" ? (
@@ -118,14 +135,22 @@ const Quran = ({ navigation }) => {
             ) : (
               <></>
             )}
-          </View>
-          <View
-            style={{
-              height: hp(62),
-              marginTop: hp(2),
-              display: currTab == "Page" ? "flex" : "none",
-            }}
-          >
+
+            {currTab == "Juz" ? (
+              <FlashList
+                data={juz.filter((a) =>
+                  search.length != 0 ? (a.id + "").startsWith(search) : a
+                )}
+                renderItem={({ item, index }) => (
+                  <RenderItem item={item} index={index} type={"Juz"} />
+                )}
+                showsVerticalScrollIndicator={false}
+                estimatedItemSize={hp(6)}
+              />
+            ) : (
+              <></>
+            )}
+
             {currTab == "Page" ? (
               <FlashList
                 data={pages.filter((a) =>

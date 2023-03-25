@@ -13,7 +13,14 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
-const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
+const renderItems = (
+  item,
+  currVerse,
+  setCurrVerse,
+  setIsVisible,
+  setMoreInfoItem,
+  bookmark
+) => {
   const items = [];
   var content = [];
   for (var i = 0; i < item.verses.length; i++) {
@@ -73,13 +80,18 @@ const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
         onPress={() => {
           setCurrVerse({ page_num: item.id, verse_key: item2.verse_key });
         }}
+        onLongPress={() => {
+          setIsVisible(true);
+          setMoreInfoItem(item2);
+        }}
       >
         {`${item2.text_uthmani} `}
 
         <Text
           style={{
             textDecorationLine: "underline",
-            textDecorationColor: "#460687",
+            textDecorationColor:
+              bookmark?.verse_key == item2.verse_key ? "#10C342" : "#460687",
             textDecorationStyle: "double",
             textAlign: "center",
           }}
@@ -131,29 +143,30 @@ const renderItems = (item, currVerse, setCurrVerse, setIsVisible) => {
   return items;
 };
 
-const Page = ({ item, index, currVerse, setCurrVerse, setIsVisible }) => {
+const Page = ({
+  item,
+  index,
+  currVerse,
+  setCurrVerse,
+  setIsVisible,
+  setMoreInfoItem,
+  bookmark,
+}) => {
   return (
     <View style={styles.container}>
-      {renderItems(item, currVerse, setCurrVerse, setIsVisible)}
+      {renderItems(
+        item,
+        currVerse,
+        setCurrVerse,
+        setIsVisible,
+        setMoreInfoItem,
+        bookmark
+      )}
     </View>
   );
 };
 
-const areEqual = (prevProps, nextProps) => {
-  const { item, currVerse } = nextProps;
-  const { item: item2, currVerse: currVerse2 } = prevProps;
-
-  /*if the props are equal, it won't update*/
-  if (item != item2) return false;
-  if (
-    currVerse != currVerse2 &&
-    (item.id == currVerse.page_num || item.id == currVerse2.page_num)
-  )
-    return false;
-  return true;
-};
-
-export default memo(Page, areEqual);
+export default Page;
 
 const styles = StyleSheet.create({
   container: {

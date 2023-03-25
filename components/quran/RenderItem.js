@@ -30,7 +30,7 @@ const RenderItem = ({ item, index, type }) => {
       }}
       onPress={() =>
         navigation.navigate("QuranInfo", {
-          page_number: type == "Surah" ? item.pages : item.id,
+          page_number: type == "Surah" || type == "Juz" ? item.pages : item.id,
         })
       }
     >
@@ -66,14 +66,16 @@ const RenderItem = ({ item, index, type }) => {
               fontSize: hp(1.6),
             }}
           >
-            {type == "Surah" ? item.name_simple : item.verses[0].chapter_name}
+            {type == "Surah" || type == "Juz"
+              ? item.name_simple
+              : item.verses[0].chapter_name}
           </Text>
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
               marginTop: hp(0.5),
-              display: type == "Surah" ? "flex" : "none",
+              display: type == "Surah" || type == "Juz" ? "flex" : "none",
             }}
           >
             <Text
@@ -114,7 +116,7 @@ const RenderItem = ({ item, index, type }) => {
           fontSize: hp(2),
         }}
       >
-        {type == "Surah"
+        {type == "Surah" || type == "Juz"
           ? item.name_arabic
           : item.verses[0].chapter_name_arabic}
       </Text>
@@ -122,16 +124,6 @@ const RenderItem = ({ item, index, type }) => {
   );
 };
 
-const areEqual = (prevProps, nextProps) => {
-  const { item } = nextProps;
-  const { item: item2 } = prevProps;
-
-  /*if the props are equal, it won't update*/
-  const isSelectedEqual = item === item2;
-
-  return isSelectedEqual;
-};
-
-export default memo(RenderItem, areEqual);
+export default RenderItem;
 
 const styles = StyleSheet.create({});

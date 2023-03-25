@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Alert,
   Image,
@@ -14,6 +14,8 @@ import {
 } from "react-native-responsive-screen";
 import DidYouKnow from "../components/home/DidYouKnow";
 import LastRead from "../components/home/LastRead";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 var moment = require("moment-hijri");
 moment.locale("en");
 
@@ -33,18 +35,52 @@ const Home = ({ navigation }) => {
     11: "Dhu'l-Qi'dah",
     12: "Dhu'l-Hijjah",
   };
+  const [bookmark, setBookmark] = useState();
+  const getBookmark = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
+      setBookmark(jsonValue != null ? JSON.parse(jsonValue) : null);
+    } catch (e) {
+      // error reading value
+      alert("An error has occured!");
+    }
+  };
+  useFocusEffect(() => {
+    getBookmark();
+  });
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
         <View style={{ paddingHorizontal: wp(6), paddingTop: hp(1) }}>
-          <Text style={styles.title}>Quranify</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={styles.title}>Quranify</Text>
+            <TouchableOpacity
+              style={styles.info}
+              onPress={() =>
+                Alert.alert("Press & hold an ayah for bookmark/translation")
+              }
+            >
+              <Image
+                source={require("../assets/info.png")}
+                style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+              />
+            </TouchableOpacity>
+          </View>
+
           <Text style={styles.date}>
             {date.toLocaleDateString("en-us", { weekday: "long" })}
           </Text>
           <Text style={styles.hijri}>{`${moment().format("iD")} ${
             months[moment().format("iM")]
           } ${moment().format("iYYYY")} AH`}</Text>
-          <LastRead />
+          {bookmark && <LastRead item={bookmark} />}
+
           <DidYouKnow />
         </View>
       </SafeAreaView>
@@ -144,5 +180,9 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_600SemiBold",
     color: "white",
     fontSize: hp(2.4),
+  },
+  info: {
+    width: wp(6),
+    height: hp(4),
   },
 });

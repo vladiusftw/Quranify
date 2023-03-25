@@ -4,10 +4,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { useNavigation } from "@react-navigation/native";
 
-const LastRead = () => {
+const LastRead = ({ item }) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        if (item != undefined && item != null)
+          navigation.navigate("QuranInfo", { page_number: item.page_number });
+      }}
+    >
       <Image
         source={require("../../assets/last-read-bg.png")}
         style={styles.bgImg}
@@ -19,8 +27,16 @@ const LastRead = () => {
         />
         <Text style={styles.lastReadText}>Last Read</Text>
       </View>
-      <Text style={styles.chapter}>Al-Fatihah</Text>
-      <Text style={styles.verseNum}>Ayah No: 1</Text>
+      <Text style={styles.chapter}>
+        {item != undefined && item != null
+          ? item.chapter_name
+          : "No Bookmark Yet"}
+      </Text>
+      {item != undefined && item != null ? (
+        <Text style={styles.verseNum}>{`Ayah No: ${item.verse_number}`}</Text>
+      ) : (
+        <></>
+      )}
     </TouchableOpacity>
   );
 };

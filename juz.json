@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "revelation_place": "meccan",
+    "bismillah_pre": false,
+    "name_simple": "Al-Fatihah",
+    "name_arabic": "الفاتحة",
+    "verses_count": 7,
+    "pages": 1
+  },
+  {
+    "id": 2,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Baqarah",
+    "name_arabic": "البقرة",
+    "verses_count": 286,
+    "pages": 22
+  },
+  {
+    "id": 3,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Baqarah",
+    "name_arabic": "البقرة",
+    "verses_count": 286,
+    "pages": 42
+  },
+  {
+    "id": 4,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Ali 'Imran",
+    "name_arabic": "آل عمران",
+    "verses_count": 200,
+    "pages": 62
+  },
+  {
+    "id": 5,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "An-Nisa",
+    "name_arabic": "النساء",
+    "verses_count": 176,
+    "pages": 82
+  },
+  {
+    "id": 6,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "An-Nisa",
+    "name_arabic": "النساء",
+    "verses_count": 176,
+    "pages": 102
+  },
+  {
+    "id": 7,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Ma'idah",
+    "name_arabic": "المائدة",
+    "verses_count": 120,
+    "pages": 121
+  },
+  {
+    "id": 8,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-An'am",
+    "name_arabic": "الأنعام",
+    "verses_count": 165,
+    "pages": 142
+  },
+  {
+    "id": 9,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-A'raf",
+    "name_arabic": "الأعراف",
+    "verses_count": 206,
+    "pages": 162
+  },
+  {
+    "id": 10,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Anfal",
+    "name_arabic": "الأنفال",
+    "verses_count": 75,
+    "pages": 182
+  },
+  {
+    "id": 11,
+    "revelation_place": "medinian",
+    "bismillah_pre": false,
+    "name_simple": "At-Tawbah",
+    "name_arabic": "التوبة",
+    "verses_count": 129,
+    "pages": 201
+  },
+  {
+    "id": 12,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Hud",
+    "name_arabic": "هود",
+    "verses_count": 123,
+    "pages": 222
+  },
+  {
+    "id": 13,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Yusuf",
+    "name_arabic": "يوسف",
+    "verses_count": 111,
+    "pages": 242
+  },
+  {
+    "id": 14,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Hijr",
+    "name_arabic": "الحجر",
+    "verses_count": 99,
+    "pages": 262
+  },
+  {
+    "id": 15,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Isra",
+    "name_arabic": "الإسراء",
+    "verses_count": 111,
+    "pages": 282
+  },
+  {
+    "id": 16,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Kahf",
+    "name_arabic": "الكهف",
+    "verses_count": 110,
+    "pages": 302
+  },
+  {
+    "id": 17,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Anbya",
+    "name_arabic": "الأنبياء",
+    "verses_count": 112,
+    "pages": 322
+  },
+  {
+    "id": 18,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Mu'minun",
+    "name_arabic": "المؤمنون",
+    "verses_count": 118,
+    "pages": 342
+  },
+  {
+    "id": 19,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Furqan",
+    "name_arabic": "الفرقان",
+    "verses_count": 77,
+    "pages": 362
+  },
+  {
+    "id": 20,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "An-Naml",
+    "name_arabic": "النمل",
+    "verses_count": 93,
+    "pages": 382
+  },
+  {
+    "id": 21,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-'Ankabut",
+    "name_arabic": "العنكبوت",
+    "verses_count": 69,
+    "pages": 402
+  },
+  {
+    "id": 22,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Ahzab",
+    "name_arabic": "الأحزاب",
+    "verses_count": 73,
+    "pages": 422
+  },
+  {
+    "id": 23,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Ya-Sin",
+    "name_arabic": "يس",
+    "verses_count": 83,
+    "pages": 442
+  },
+  {
+    "id": 24,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Az-Zumar",
+    "name_arabic": "الزمر",
+    "verses_count": 75,
+    "pages": 462
+  },
+  {
+    "id": 25,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Fussilat",
+    "name_arabic": "فصلت",
+    "verses_count": 54,
+    "pages": 482
+  },
+  {
+    "id": 26,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Ahqaf",
+    "name_arabic": "الأحقاف",
+    "verses_count": 35,
+    "pages": 502
+  },
+  {
+    "id": 27,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Adh-Dhariyat",
+    "name_arabic": "الذاريات",
+    "verses_count": 60,
+    "pages": 522
+  },
+  {
+    "id": 28,
+    "revelation_place": "medinian",
+    "bismillah_pre": true,
+    "name_simple": "Al-Mujadila",
+    "name_arabic": "المجادلة",
+    "verses_count": 22,
+    "pages": 542
+  },
+  {
+    "id": 29,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "Al-Mulk",
+    "name_arabic": "الملك",
+    "verses_count": 30,
+    "pages": 562
+  },
+  {
+    "id": 30,
+    "revelation_place": "meccan",
+    "bismillah_pre": true,
+    "name_simple": "An-Naba",
+    "name_arabic": "النبإ",
+    "verses_count": 40,
+    "pages": 582
+  }
+]

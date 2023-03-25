@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -13,11 +14,29 @@ import {
 } from "react-native-responsive-screen";
 
 const Tasbih = ({ navigation }) => {
+  const [counter, setCounter] = useState(0);
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
         <View style={{ paddingHorizontal: wp(6), paddingTop: hp(1) }}>
           <Text style={styles.title}>Quranify</Text>
+          <Text style={styles.subtitle}>Tasbeeh</Text>
+          <Text style={styles.counter}>{counter}</Text>
+          <TouchableOpacity
+            style={styles.add}
+            onPress={() => setCounter((prev) => prev + 1)}
+          >
+            <Image
+              source={require("../assets/add.png")}
+              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.reset} onPress={() => setCounter(0)}>
+            <Image
+              source={require("../assets/reset.png")}
+              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+            />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
 
@@ -103,15 +122,29 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: hp(2.8),
   },
-  date: {
-    fontFamily: "Poppins_500Medium",
-    color: "rgba(161, 156, 197, 0.8)",
-    fontSize: hp(1.8),
-    marginTop: hp(2),
-  },
-  hijri: {
+  subtitle: {
     fontFamily: "Poppins_600SemiBold",
+    color: "#A19CC5",
+    fontSize: hp(3.6),
+    marginTop: hp(6),
+    alignSelf: "center",
+  },
+  counter: {
+    fontFamily: "Poppins_700Bold",
     color: "white",
-    fontSize: hp(2.4),
+    fontSize: hp(6.4),
+    alignSelf: "center",
+    marginTop: hp(-1),
+  },
+  add: {
+    width: wp(60),
+    height: hp(30),
+    alignSelf: "center",
+    marginTop: hp(20),
+  },
+  reset: {
+    width: wp(17),
+    height: hp(8),
+    marginTop: hp(-2),
   },
 });
