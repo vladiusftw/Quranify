@@ -3,6 +3,7 @@ import {
   FlatList,
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -125,7 +126,16 @@ const QuranInfo = ({ navigation, route }) => {
           width: wp(95),
         }}
       >
-        <View style={{ paddingHorizontal: wp(2) }}>
+        <ScrollView style={{ paddingHorizontal: wp(2), maxHeight: hp(60) }}>
+          <TouchableOpacity
+            style={styles.bookmark}
+            onPress={() => saveBookmark()}
+          >
+            <Image
+              source={require("../assets/bookmark.png")}
+              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+            />
+          </TouchableOpacity>
           <Text
             style={[
               styles.translation,
@@ -139,16 +149,7 @@ const QuranInfo = ({ navigation, route }) => {
               .replace(/\<[^\]]*\>/, "")
               .replace(/\s\s+/g, " ")}
           </Text>
-          <TouchableOpacity
-            style={styles.bookmark}
-            onPress={() => saveBookmark()}
-          >
-            <Image
-              source={require("../assets/bookmark.png")}
-              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-            />
-          </TouchableOpacity>
-        </View>
+        </ScrollView>
       </Overlay>
     </View>
   );
@@ -207,5 +208,6 @@ const styles = StyleSheet.create({
     width: wp(6),
     height: hp(4),
     alignSelf: "flex-end",
+    position: "absolute",
   },
 });

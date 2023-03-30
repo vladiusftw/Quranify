@@ -72,7 +72,7 @@ const renderItems = (
           {
             backgroundColor:
               currVerse.verse_key == item2.verse_key
-                ? "#460687"
+                ? "rgba(70, 6, 135, 0.7)"
                 : "transparent",
           },
         ]}
@@ -91,7 +91,11 @@ const renderItems = (
           style={{
             textDecorationLine: "underline",
             textDecorationColor:
-              bookmark?.verse_key == item2.verse_key ? "#10C342" : "#460687",
+              bookmark.verse_key == item2.verse_key
+                ? "#10C342"
+                : currVerse.verse_key == item2.verse_key
+                ? "white"
+                : "#460687",
             textDecorationStyle: "double",
             textAlign: "center",
           }}
@@ -194,9 +198,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "Scheherazade_700Bold",
-    color: "white",
-    fontSize: hp(2.8),
+    color: "#EEEEEE",
+    fontSize: hp(2.6),
     writingDirection: "rtl",
-    lineHeight: 50,
+    lineHeight: 52,
   },
 });

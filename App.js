@@ -11,6 +11,7 @@ import {
 import { Amiri_700Bold, useFonts as useFonts2 } from "@expo-google-fonts/amiri";
 import {
   Scheherazade_700Bold,
+  Scheherazade_400Regular,
   useFonts as useFonts3,
 } from "@expo-google-fonts/scheherazade";
 import {
@@ -41,6 +42,7 @@ export default function App() {
   });
   const [fontsLoaded3] = useFonts3({
     Scheherazade_700Bold,
+    Scheherazade_400Regular,
   });
   if (!fontsLoaded || !fontsLoaded2 || !fontsLoaded3)
     return (
