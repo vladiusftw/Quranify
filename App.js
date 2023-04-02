@@ -24,6 +24,8 @@ import Quran from "./pages/Quran";
 import QuranInfo from "./pages/QuranInfo";
 import Tasbih from "./pages/Tasbih";
 import { View } from "react-native";
+import Settings from "./pages/Settings";
+import Bookmark from "./pages/Bookmark";
 
 I18nManager.allowRTL(true);
 
@@ -64,6 +66,8 @@ export default function App() {
         <Stack.Screen name="Quran" component={Quran} />
         <Stack.Screen name="QuranInfo" component={QuranInfo} />
         <Stack.Screen name="Tasbih" component={Tasbih} />
+        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Bookmark" component={Bookmark} />
       </Stack.Navigator>
     </NavigationContainer>
   );

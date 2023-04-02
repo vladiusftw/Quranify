@@ -47,7 +47,7 @@ const RenderItem = ({ item, index, type }) => {
           style={{
             position: "absolute",
             fontFamily: "Poppins_500Medium",
-            color: "white",
+            color: "#EEEEEE",
             fontSize: hp(1.4),
 
             width: wp(8),
@@ -62,7 +62,7 @@ const RenderItem = ({ item, index, type }) => {
           <Text
             style={{
               fontFamily: "Poppins_500Medium",
-              color: "white",
+              color: "#EEEEEE",
               fontSize: hp(1.6),
             }}
           >

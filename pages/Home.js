@@ -35,19 +35,7 @@ const Home = ({ navigation }) => {
     11: "Dhu'l-Qi'dah",
     12: "Dhu'l-Hijjah",
   };
-  const [bookmark, setBookmark] = useState();
-  const getBookmark = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
-      setBookmark(jsonValue != null ? JSON.parse(jsonValue) : null);
-    } catch (e) {
-      // error reading value
-      alert("An error has occured!");
-    }
-  };
-  useFocusEffect(() => {
-    getBookmark();
-  });
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
@@ -60,17 +48,41 @@ const Home = ({ navigation }) => {
             }}
           >
             <Text style={styles.title}>Quranify</Text>
-            <TouchableOpacity
-              style={styles.info}
-              onPress={() =>
-                Alert.alert("Press & hold an ayah for bookmark/translation")
-              }
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
             >
-              <Image
-                source={require("../assets/info.png")}
-                style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-              />
-            </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.info, { marginRight: wp(3) }]}
+                onPress={() =>
+                  Alert.alert("Press & hold an ayah for bookmark/translation")
+                }
+              >
+                <Image
+                  source={require("../assets/info.png")}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "contain",
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.info}
+                onPress={() => navigation.navigate("Settings")}
+              >
+                <Image
+                  source={require("../assets/settings.png")}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "contain",
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
 
           <Text style={styles.date}>
@@ -79,8 +91,7 @@ const Home = ({ navigation }) => {
           <Text style={styles.hijri}>{`${moment().format("iD")} ${
             months[moment().format("iM")]
           } ${moment().format("iYYYY")} AH`}</Text>
-          {bookmark && <LastRead item={bookmark} />}
-
+          <LastRead />
           <DidYouKnow />
         </View>
       </SafeAreaView>
@@ -167,7 +178,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Poppins_700Bold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.8),
   },
   date: {
@@ -178,11 +189,11 @@ const styles = StyleSheet.create({
   },
   hijri: {
     fontFamily: "Poppins_600SemiBold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.4),
   },
   info: {
-    width: wp(6),
+    width: wp(7),
     height: hp(4),
   },
 });

@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   counter: {
     fontFamily: "Poppins_700Bold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(6.4),
     alignSelf: "center",
     marginTop: hp(-1),

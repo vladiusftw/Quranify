@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import {
   FlatList,
   Image,
@@ -12,6 +12,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const renderItems = (
   item,
@@ -21,6 +22,22 @@ const renderItems = (
   setMoreInfoItem,
   bookmark
 ) => {
+  const getFont = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("quranify-font");
+      if (jsonValue != null) setFont(JSON.parse(jsonValue));
+    } catch (e) {
+      // error reading value
+      alert("An error has occured!");
+    }
+  };
+  useEffect(() => {
+    getFont();
+  }, []);
+  const [font, setFont] = useState({
+    fontSize: 0,
+    fontFamily: "Scheherazade_700Bold",
+  });
   const items = [];
   var content = [];
   for (var i = 0; i < item.verses.length; i++) {
@@ -58,7 +75,15 @@ const renderItems = (
             style={{ alignItems: "center", width: "100%" }}
             key={item2.id + "bism"}
           >
-            <Text style={styles.text}>
+            <Text
+              style={[
+                styles.text,
+                {
+                  fontSize: hp(2.4) + hp(0.2) * font.fontSize,
+                  fontFamily: font.fontFamily,
+                },
+              ]}
+            >
               {"بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ"}
             </Text>
           </View>
@@ -71,14 +96,28 @@ const renderItems = (
           styles.text,
           {
             backgroundColor:
-              currVerse.verse_key == item2.verse_key
-                ? "rgba(70, 6, 135, 0.7)"
+              currVerse?.verse_key == item2?.verse_key
+                ? "rgba(70, 6, 135, 0.6)"
                 : "transparent",
+          },
+          bookmark?.verse_key == item2?.verse_key
+            ? {
+                textDecorationLine: "underline",
+                textDecorationStyle: "double",
+                textDecorationColor: "#10C342",
+              }
+            : {},
+          {
+            fontSize: hp(2.4) + hp(0.2) * font.fontSize,
+            fontFamily: font.fontFamily,
           },
         ]}
         key={item2.verse_key}
         onPress={() => {
-          setCurrVerse({ page_num: item.id, verse_key: item2.verse_key });
+          setCurrVerse({
+            page_num: item.id,
+            verse_key: item2.verse_key,
+          });
         }}
         onLongPress={() => {
           setIsVisible(true);
@@ -91,10 +130,10 @@ const renderItems = (
           style={{
             textDecorationLine: "underline",
             textDecorationColor:
-              bookmark.verse_key == item2.verse_key
+              bookmark?.verse_key == item2?.verse_key
                 ? "#10C342"
-                : currVerse.verse_key == item2.verse_key
-                ? "white"
+                : currVerse?.verse_key == item2?.verse_key
+                ? "#EEEEEE"
                 : "#460687",
             textDecorationStyle: "double",
             textAlign: "center",
@@ -199,7 +238,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "Scheherazade_700Bold",
     color: "#EEEEEE",
-    fontSize: hp(2.6),
     writingDirection: "rtl",
     lineHeight: 52,
   },

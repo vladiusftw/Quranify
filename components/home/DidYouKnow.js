@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   title: {
     alignSelf: "center",
     fontFamily: "Poppins_600SemiBold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.8),
   },
   content: {

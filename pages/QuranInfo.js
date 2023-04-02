@@ -18,8 +18,10 @@ import data from "../quran.json";
 import { FlashList } from "@shopify/flash-list";
 import { Overlay } from "@rneui/base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Audio } from "expo-av";
 
 const QuranInfo = ({ navigation, route }) => {
+  const [sound, setSound] = useState();
   const [currItem, setCurrItem] = useState(data[0]);
   const [currVerse, setCurrVerse] = useState({
     page_num: 0,
@@ -27,24 +29,42 @@ const QuranInfo = ({ navigation, route }) => {
   });
   const [isVisible, setIsVisible] = useState(false);
   const [moreInfoItem, setMoreInfoItem] = useState();
-  const [bookmark, setBookmark] = useState();
+  const [bookmarks, setBookmarks] = useState();
   const { page_number } = route.params;
   const ref = useRef();
-  const saveBookmark = async () => {
-    try {
-      const jsonValue = JSON.stringify(moreInfoItem);
-      await AsyncStorage.setItem("quranify-bookmark", jsonValue);
-      setBookmark(moreInfoItem);
-      setIsVisible(false);
-    } catch (e) {
-      // saving error
-      alert("An error has occured!");
-    }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log("Unloading Sound");
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
+  useEffect(() => {
+    if (!isVisible && sound) sound.unloadAsync();
+  }, [isVisible]);
+
+  const playSound = async () => {
+    if (currVerse.audio != "") {
+      const sound2 = new Audio.Sound();
+      await sound2.loadAsync({
+        uri: moreInfoItem.audio,
+      });
+      setSound(sound2);
+      await sound2.playAsync();
+    } else console.log(moreInfoItem);
   };
+
   const getBookmark = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
-      setBookmark(jsonValue != null ? JSON.parse(jsonValue) : null);
+      var temp = [];
+      if (jsonValue != null) temp.push(jsonValue);
+      const jsonValue2 = await AsyncStorage.getItem("quranify-bookmarks");
+      if (jsonValue2 != null) temp = [...temp, ...jsonValue2];
+      setBookmarks([...temp]);
     } catch (e) {
       // error reading value
       alert("An error has occured!");
@@ -127,21 +147,34 @@ const QuranInfo = ({ navigation, route }) => {
         }}
       >
         <ScrollView style={{ paddingHorizontal: wp(2), maxHeight: hp(60) }}>
-          <TouchableOpacity
-            style={styles.bookmark}
-            onPress={() => saveBookmark()}
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: hp(2),
+            }}
           >
-            <Image
-              source={require("../assets/bookmark.png")}
-              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-            />
-          </TouchableOpacity>
-          <Text
-            style={[
-              styles.translation,
-              { alignSelf: "center", marginBottom: hp(2) },
-            ]}
-          >{`${moreInfoItem?.chapter_name} ${moreInfoItem?.verse_key}`}</Text>
+            <TouchableOpacity style={styles.play} onPress={playSound}>
+              <Image
+                source={require("../assets/play.png")}
+                style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+              />
+            </TouchableOpacity>
+            <Text
+              style={[styles.translation]}
+            >{`${moreInfoItem?.chapter_name} ${moreInfoItem?.verse_key}`}</Text>
+            <TouchableOpacity
+              style={styles.bookmark}
+              onPress={() => saveBookmark()}
+            >
+              <Image
+                source={require("../assets/bookmark.png")}
+                style={{ width: "100%", height: "100%", resizeMode: "contain" }}
+              />
+            </TouchableOpacity>
+          </View>
+
           <Text style={styles.arabicText}>{moreInfoItem?.text_uthmani}</Text>
           <Text style={styles.translation}>
             {moreInfoItem?.translations[0].text
@@ -180,7 +213,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Amiri_700Bold",
     fontSize: hp(3.6),
-    color: "white",
+    color: "#EEEEEE",
   },
   tracker: {
     backgroundColor: "#460687",
@@ -189,25 +222,27 @@ const styles = StyleSheet.create({
     paddingVertical: hp(0.5),
   },
   trackerText: {
-    color: "white",
+    color: "#EEEEEE",
     fontFamily: "Poppins_500Medium",
   },
   arabicText: {
     fontFamily: "Scheherazade_700Bold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(3),
     writingDirection: "rtl",
     marginBottom: hp(1),
   },
   translation: {
     fontFamily: "Poppins_600SemiBold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.2),
   },
   bookmark: {
-    width: wp(6),
+    width: wp(5),
     height: hp(4),
-    alignSelf: "flex-end",
-    position: "absolute",
+  },
+  play: {
+    width: wp(7),
+    height: hp(4),
   },
 });

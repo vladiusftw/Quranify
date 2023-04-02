@@ -1,13 +1,31 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { useNavigation } from "@react-navigation/native";
 
-const LastRead = ({ item }) => {
+const LastRead = () => {
   const navigation = useNavigation();
+  const [bookmarks, setBookmarks] = useState([]);
+  const getBookmark = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
+      var temp = [];
+      if (jsonValue != null)
+        temp.push({ ...jsonValue, bookmark_name: "Khitmah Completion" });
+      const jsonValue2 = await AsyncStorage.getItem("quranify-bookmarks");
+      if (jsonValue2 != null) temp = [...temp, ...jsonValue2];
+      setBookmarks([...temp]);
+    } catch (e) {
+      // error reading value
+      alert("An error has occured!");
+    }
+  };
+  useEffect(() => {
+    getBookmark();
+  }, []);
   return (
     <TouchableOpacity
       style={styles.container}
@@ -28,7 +46,7 @@ const LastRead = ({ item }) => {
         <Text style={styles.lastReadText}>Last Read</Text>
       </View>
       <Text style={styles.chapter}>
-        {item != undefined && item != null
+        {bookmarks.length != 0 && bookmarks[0].bookmark_name != "Khitmah"
           ? item.chapter_name
           : "No Bookmark Yet"}
       </Text>
@@ -68,12 +86,12 @@ const styles = StyleSheet.create({
   },
   lastReadText: {
     fontFamily: "Poppins_500Medium",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(1.4),
   },
   chapter: {
     fontFamily: "Poppins_600SemiBold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(1.8),
     marginTop: hp(1),
   },

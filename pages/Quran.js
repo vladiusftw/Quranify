@@ -24,19 +24,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const Quran = ({ navigation }) => {
   const [currTab, setCurrTab] = useState("Surah");
   const [search, setSearch] = useState("");
-  const getBookmark = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
-      const value = jsonValue != null ? JSON.parse(jsonValue) : null;
-      if (value == null) alert("No bookmark saved!");
-      else {
-        navigation.navigate("QuranInfo", { page_number: value.page_number });
-      }
-    } catch (e) {
-      // error reading value
-      alert("An error has occured!");
-    }
-  };
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
@@ -51,7 +38,7 @@ const Quran = ({ navigation }) => {
             <Text style={styles.title}>Quranify</Text>
             <TouchableOpacity
               style={styles.bookmark}
-              onPress={() => getBookmark()}
+              onPress={() => navigation.navigate("Bookmark", { type: "hide" })}
             >
               <Image
                 source={require("../assets/bookmark.png")}
@@ -248,7 +235,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Poppins_700Bold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.8),
   },
   bookmark: {
