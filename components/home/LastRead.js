@@ -1,38 +1,25 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { useNavigation } from "@react-navigation/native";
+import { AppContext } from "../../MyContext";
 
 const LastRead = () => {
   const navigation = useNavigation();
-  const [bookmarks, setBookmarks] = useState([]);
-  const getBookmark = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
-      var temp = [];
-      if (jsonValue != null)
-        temp.push({ ...jsonValue, bookmark_name: "Khitmah Completion" });
-      const jsonValue2 = await AsyncStorage.getItem("quranify-bookmarks");
-      if (jsonValue2 != null) temp = [...temp, ...jsonValue2];
-      setBookmarks([...temp]);
-    } catch (e) {
-      // error reading value
-      alert("An error has occured!");
-    }
-  };
-  useEffect(() => {
-    getBookmark();
-  }, []);
+  const { bookmarks, setBookmarks } = useContext(AppContext);
+
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        if (item != undefined && item != null)
-          navigation.navigate("QuranInfo", { page_number: item.page_number });
+        navigation.navigate("QuranInfo", {
+          page_number: bookmarks[0].page_number,
+        });
       }}
+      disabled={bookmarks.length == 0}
     >
       <Image
         source={require("../../assets/last-read-bg.png")}
@@ -46,12 +33,12 @@ const LastRead = () => {
         <Text style={styles.lastReadText}>Last Read</Text>
       </View>
       <Text style={styles.chapter}>
-        {bookmarks.length != 0 && bookmarks[0].bookmark_name != "Khitmah"
-          ? item.chapter_name
-          : "No Bookmark Yet"}
+        {bookmarks.length != 0 ? bookmarks[0].chapter_name : "No Bookmark Yet"}
       </Text>
-      {item != undefined && item != null ? (
-        <Text style={styles.verseNum}>{`Ayah No: ${item.verse_number}`}</Text>
+      {bookmarks.length != 0 ? (
+        <Text
+          style={styles.verseNum}
+        >{`Ayah No: ${bookmarks[0].verse_number}`}</Text>
       ) : (
         <></>
       )}

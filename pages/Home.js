@@ -57,7 +57,9 @@ const Home = ({ navigation }) => {
               <TouchableOpacity
                 style={[styles.info, { marginRight: wp(3) }]}
                 onPress={() =>
-                  Alert.alert("Press & hold an ayah for bookmark/translation")
+                  Alert.alert(
+                    "Press & hold an ayah for bookmark, translation,and recitation"
+                  )
                 }
               >
                 <Image
@@ -86,7 +88,7 @@ const Home = ({ navigation }) => {
           </View>
 
           <Text style={styles.date}>
-            {date.toLocaleDateString("en-us", { weekday: "long" })}
+            {date.toLocaleDateString("en-gb", { weekday: "long" })}
           </Text>
           <Text style={styles.hijri}>{`${moment().format("iD")} ${
             months[moment().format("iM")]

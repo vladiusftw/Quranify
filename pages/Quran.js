@@ -38,7 +38,7 @@ const Quran = ({ navigation }) => {
             <Text style={styles.title}>Quranify</Text>
             <TouchableOpacity
               style={styles.bookmark}
-              onPress={() => navigation.navigate("Bookmark", { type: "hide" })}
+              onPress={() => navigation.push("Bookmark", { type: "hide" })}
             >
               <Image
                 source={require("../assets/bookmark.png")}

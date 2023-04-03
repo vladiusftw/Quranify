@@ -20,7 +20,7 @@ const renderItems = (
   setCurrVerse,
   setIsVisible,
   setMoreInfoItem,
-  bookmark
+  bookmarks
 ) => {
   const getFont = async () => {
     try {
@@ -100,7 +100,7 @@ const renderItems = (
                 ? "rgba(70, 6, 135, 0.6)"
                 : "transparent",
           },
-          bookmark?.verse_key == item2?.verse_key
+          bookmarks?.find((a) => a.verse_key == item2?.verse_key)
             ? {
                 textDecorationLine: "underline",
                 textDecorationStyle: "double",
@@ -129,12 +129,13 @@ const renderItems = (
         <Text
           style={{
             textDecorationLine: "underline",
-            textDecorationColor:
-              bookmark?.verse_key == item2?.verse_key
-                ? "#10C342"
-                : currVerse?.verse_key == item2?.verse_key
-                ? "#EEEEEE"
-                : "#460687",
+            textDecorationColor: bookmarks?.find(
+              (a) => a.verse_key == item2?.verse_key
+            )
+              ? "#10C342"
+              : currVerse?.verse_key == item2?.verse_key
+              ? "#EEEEEE"
+              : "#460687",
             textDecorationStyle: "double",
             textAlign: "center",
           }}
@@ -193,7 +194,7 @@ const Page = ({
   setCurrVerse,
   setIsVisible,
   setMoreInfoItem,
-  bookmark,
+  bookmarks,
 }) => {
   return (
     <View style={styles.container}>
@@ -203,7 +204,7 @@ const Page = ({
         setCurrVerse,
         setIsVisible,
         setMoreInfoItem,
-        bookmark
+        bookmarks
       )}
     </View>
   );

@@ -26,12 +26,14 @@ import Tasbih from "./pages/Tasbih";
 import { View } from "react-native";
 import Settings from "./pages/Settings";
 import Bookmark from "./pages/Bookmark";
+import MyContext from "./MyContext";
 
 I18nManager.allowRTL(true);
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  // fonts imports
   const [fontsLoaded] = useFonts({
     Poppins_500Medium,
     Poppins_600SemiBold,
@@ -46,6 +48,7 @@ export default function App() {
     Scheherazade_700Bold,
     Scheherazade_400Regular,
   });
+
   if (!fontsLoaded || !fontsLoaded2 || !fontsLoaded3)
     return (
       <View
@@ -59,16 +62,19 @@ export default function App() {
         <ActivityIndicator size={"large"} />
       </View>
     );
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Quran" component={Quran} />
-        <Stack.Screen name="QuranInfo" component={QuranInfo} />
-        <Stack.Screen name="Tasbih" component={Tasbih} />
-        <Stack.Screen name="Settings" component={Settings} />
-        <Stack.Screen name="Bookmark" component={Bookmark} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <MyContext>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Quran" component={Quran} />
+          <Stack.Screen name="QuranInfo" component={QuranInfo} />
+          <Stack.Screen name="Tasbih" component={Tasbih} />
+          <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen name="Bookmark" component={Bookmark} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </MyContext>
   );
 }

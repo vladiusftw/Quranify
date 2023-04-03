@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   FlatList,
   Image,
@@ -19,6 +19,7 @@ import { FlashList } from "@shopify/flash-list";
 import { Overlay } from "@rneui/base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
+import { AppContext } from "../MyContext";
 
 const QuranInfo = ({ navigation, route }) => {
   const [sound, setSound] = useState();
@@ -29,9 +30,17 @@ const QuranInfo = ({ navigation, route }) => {
   });
   const [isVisible, setIsVisible] = useState(false);
   const [moreInfoItem, setMoreInfoItem] = useState();
-  const [bookmarks, setBookmarks] = useState();
   const { page_number } = route.params;
   const ref = useRef();
+  const { bookmarks } = useContext(AppContext);
+
+  const setAudioMode = async () => {
+    await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+  };
+
+  useEffect(() => {
+    setAudioMode();
+  }, []);
 
   useEffect(() => {
     return sound
@@ -49,30 +58,18 @@ const QuranInfo = ({ navigation, route }) => {
   const playSound = async () => {
     if (currVerse.audio != "") {
       const sound2 = new Audio.Sound();
-      await sound2.loadAsync({
-        uri: moreInfoItem.audio,
-      });
-      setSound(sound2);
-      await sound2.playAsync();
+      try {
+        await sound2.loadAsync({
+          uri: moreInfoItem.audio,
+        });
+        setSound(sound2);
+        await sound2.playAsync();
+      } catch (e) {
+        alert("No Internet Connection Found!");
+      }
     } else console.log(moreInfoItem);
   };
 
-  const getBookmark = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("quranify-bookmark");
-      var temp = [];
-      if (jsonValue != null) temp.push(jsonValue);
-      const jsonValue2 = await AsyncStorage.getItem("quranify-bookmarks");
-      if (jsonValue2 != null) temp = [...temp, ...jsonValue2];
-      setBookmarks([...temp]);
-    } catch (e) {
-      // error reading value
-      alert("An error has occured!");
-    }
-  };
-  useEffect(() => {
-    getBookmark();
-  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -125,12 +122,12 @@ const QuranInfo = ({ navigation, route }) => {
             setCurrVerse={setCurrVerse}
             setIsVisible={setIsVisible}
             setMoreInfoItem={setMoreInfoItem}
-            bookmark={bookmark}
+            bookmarks={bookmarks}
           />
         )}
         showsVerticalScrollIndicator={false}
         estimatedItemSize={930}
-        extraData={[currVerse, bookmark]}
+        extraData={[currVerse, bookmarks]}
         onViewableItemsChanged={(info) => {
           if (info.viewableItems.length != 0)
             setCurrItem(info.viewableItems[0].item);
@@ -166,7 +163,10 @@ const QuranInfo = ({ navigation, route }) => {
             >{`${moreInfoItem?.chapter_name} ${moreInfoItem?.verse_key}`}</Text>
             <TouchableOpacity
               style={styles.bookmark}
-              onPress={() => saveBookmark()}
+              onPress={() => {
+                setIsVisible(false);
+                navigation.push("Bookmark", { type: "show", moreInfoItem });
+              }}
             >
               <Image
                 source={require("../assets/bookmark.png")}
