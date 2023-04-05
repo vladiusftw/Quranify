@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from "react";
 import {
   FlatList,
   Image,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -101,11 +102,13 @@ const renderItems = (
                 : "transparent",
           },
           bookmarks?.find((a) => a.verse_key == item2?.verse_key)
-            ? {
-                textDecorationLine: "underline",
-                textDecorationStyle: "double",
-                textDecorationColor: "#10C342",
-              }
+            ? Platform.OS == "ios"
+              ? {
+                  textDecorationLine: "underline",
+                  textDecorationStyle: "double",
+                  textDecorationColor: "#10C342",
+                }
+              : { backgroundColor: "rgba(16, 195, 66, 0.5)" }
             : {},
           {
             fontSize: hp(2.4) + hp(0.2) * font.fontSize,
@@ -127,18 +130,22 @@ const renderItems = (
         {`${item2.text_uthmani} `}
 
         <Text
-          style={{
-            textDecorationLine: "underline",
-            textDecorationColor: bookmarks?.find(
-              (a) => a.verse_key == item2?.verse_key
-            )
-              ? "#10C342"
-              : currVerse?.verse_key == item2?.verse_key
-              ? "#EEEEEE"
-              : "#460687",
-            textDecorationStyle: "double",
-            textAlign: "center",
-          }}
+          style={
+            Platform.OS == "ios"
+              ? {
+                  textDecorationLine: "underline",
+                  textDecorationColor: bookmarks?.find(
+                    (a) => a.verse_key == item2?.verse_key
+                  )
+                    ? "#10C342"
+                    : currVerse?.verse_key == item2?.verse_key
+                    ? "#EEEEEE"
+                    : "#460687",
+                  textDecorationStyle: "double",
+                  textAlign: "center",
+                }
+              : {}
+          }
         >
           {`( ${item2.verse_number} )`}
         </Text>
@@ -240,6 +247,6 @@ const styles = StyleSheet.create({
     fontFamily: "Scheherazade_700Bold",
     color: "#EEEEEE",
     writingDirection: "rtl",
-    lineHeight: 52,
+    lineHeight: hp(6),
   },
 });

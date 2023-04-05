@@ -224,6 +224,7 @@ const styles = StyleSheet.create({
   trackerText: {
     color: "#EEEEEE",
     fontFamily: "Poppins_500Medium",
+    fontSize: hp(1.6),
   },
   arabicText: {
     fontFamily: "Scheherazade_700Bold",
