@@ -25,14 +25,19 @@ const MyContext = ({ children }) => {
         };
         tempBookmarks.push(khitmahBookmark);
       }
+
       try {
         const jsonValue2 = await AsyncStorage.getItem("quranify-bookmarks");
-        if (jsonValue2 != null)
-          tempBookmarks = [...tempBookmarks, JSON.parse(jsonValue2)];
+        if (jsonValue2 != null) {
+          tempBookmarks = [...tempBookmarks, ...JSON.parse(jsonValue2)];
+        }
+        console.log("test", tempBookmarks);
         setBookmarks([...tempBookmarks]);
       } catch (e) {
         // error reading value
         alert("An error has occured!");
+        alert("test");
+        console.log(e);
       }
     } catch (e) {
       // error reading value
@@ -44,11 +49,11 @@ const MyContext = ({ children }) => {
     if (bookmarks.length > 0) {
       try {
         const jsonValue = JSON.stringify(bookmarks[0]);
-        await AsyncStorage.setItem('quranify-bookmark"', jsonValue);
+        await AsyncStorage.setItem("quranify-bookmark", jsonValue);
         if (bookmarks.length > 1) {
           try {
             const jsonValue2 = JSON.stringify(bookmarks.slice(1));
-            await AsyncStorage.setItem('quranify-bookmarks"', jsonValue2);
+            await AsyncStorage.setItem("quranify-bookmarks", jsonValue2);
           } catch (e) {
             // saving error
             alert("An error has occured!2");
