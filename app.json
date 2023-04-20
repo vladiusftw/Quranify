@@ -2,12 +2,12 @@
   "expo": {
     "name": "Quranify",
     "slug": "Quranify",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
-    "icon": "./assets/logo.png",
+    "icon": "./assets/quranify-logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/quranify.png",
+      "image": "./assets/quranify-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#121931"
     },
@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.pagepro.quranify",
-      "buildNumber": "1.0.3"
+      "buildNumber": "1.0.4"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +23,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.pagepro.quranify",
-      "versionCode": 2
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"

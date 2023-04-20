@@ -36,8 +36,6 @@ const MyContext = ({ children }) => {
       } catch (e) {
         // error reading value
         alert("An error has occured!");
-        alert("test");
-        console.log(e);
       }
     } catch (e) {
       // error reading value

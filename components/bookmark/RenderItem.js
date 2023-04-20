@@ -18,9 +18,6 @@ import {
 const RenderItem = ({ item, index, type, setBookmarkItem, setIsVisible2 }) => {
   const navigation = useNavigation();
 
-  useEffect(() => {
-    console.log(item);
-  }, []);
   return (
     <TouchableOpacity
       style={{
