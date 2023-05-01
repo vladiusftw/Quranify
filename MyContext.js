@@ -31,7 +31,6 @@ const MyContext = ({ children }) => {
         if (jsonValue2 != null) {
           tempBookmarks = [...tempBookmarks, ...JSON.parse(jsonValue2)];
         }
-        console.log("test", tempBookmarks);
         setBookmarks([...tempBookmarks]);
       } catch (e) {
         // error reading value

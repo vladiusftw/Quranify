@@ -45,7 +45,6 @@ const QuranInfo = ({ navigation, route }) => {
   useEffect(() => {
     return sound
       ? () => {
-          console.log("Unloading Sound");
           sound.unloadAsync();
         }
       : undefined;
@@ -67,7 +66,7 @@ const QuranInfo = ({ navigation, route }) => {
       } catch (e) {
         alert("No Internet Connection Found!");
       }
-    } else console.log(moreInfoItem);
+    }
   };
 
   return (
@@ -104,7 +103,6 @@ const QuranInfo = ({ navigation, route }) => {
         ref={ref}
         initialScrollIndex={page_number - 1}
         onScrollToIndexFailed={(info) => {
-          console.log("error");
           const wait = new Promise((resolve) => setTimeout(resolve, 200));
           wait.then(() => {
             ref.current?.scrollToIndex({

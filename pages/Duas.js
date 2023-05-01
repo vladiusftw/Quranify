@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import {
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
   Alert,
@@ -13,30 +15,43 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
-const Tasbih = ({ navigation }) => {
-  const [counter, setCounter] = useState(0);
+const Duas = ({ navigation }) => {
+  const [tab, setTab] = useState("category");
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 0.88 }}>
         <View style={{ paddingHorizontal: wp(6), paddingTop: hp(1) }}>
           <Text style={styles.title}>Quranify</Text>
-          <Text style={styles.subtitle}>Tasbeeh</Text>
-          <Text style={styles.counter}>{counter}</Text>
-          <TouchableOpacity
-            style={styles.add}
-            onPress={() => setCounter((prev) => prev + 1)}
-          >
-            <Image
-              source={require("../assets/add.png")}
-              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.reset} onPress={() => setCounter(0)}>
-            <Image
-              source={require("../assets/reset.png")}
-              style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-            />
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row", marginTop: hp(2) }}>
+            <TouchableOpacity
+              style={[
+                styles.tab,
+                {
+                  borderBottomColor:
+                    tab == "category"
+                      ? "rgba(164, 74, 255, 1)"
+                      : "rgba(135, 137, 163, 0.1)",
+                },
+              ]}
+              onPress={() => setTab("category")}
+            >
+              <Text style={styles.tabText}>Categories</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.tab,
+                {
+                  borderBottomColor:
+                    tab == "my duas"
+                      ? "rgba(164, 74, 255, 1)"
+                      : "rgba(135, 137, 163, 0.1)",
+                },
+              ]}
+              onPress={() => setTab("my duas")}
+            >
+              <Text style={styles.tabText}>My Duas</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
 
@@ -58,18 +73,18 @@ const Tasbih = ({ navigation }) => {
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.quran}
-            onPress={() => navigation.navigate("Quran")}
-          >
+          <TouchableOpacity style={styles.quran}>
             <Image
-              source={require("../assets/quran-icon-grey.png")}
+              source={require("../assets/quran-icon-purple.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.tasbih}>
+          <TouchableOpacity
+            style={styles.tasbih}
+            onPress={() => navigation.navigate("Tasbih")}
+          >
             <Image
-              source={require("../assets/tasbih-purple.png")}
+              source={require("../assets/tasbih.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
@@ -88,7 +103,7 @@ const Tasbih = ({ navigation }) => {
   );
 };
 
-export default Tasbih;
+export default Duas;
 
 const styles = StyleSheet.create({
   container: {
@@ -119,32 +134,20 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Poppins_700Bold",
-    color: "white",
+    color: "#EEEEEE",
     fontSize: hp(2.8),
   },
-  subtitle: {
+  tab: {
+    flex: 0.5,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: hp(1.5),
+    borderBottomColor: "rgba(135, 137, 163, 0.1)",
+    borderBottomWidth: 2,
+  },
+  tabText: {
     fontFamily: "Poppins_600SemiBold",
-    color: "#A19CC5",
-    fontSize: hp(3.6),
-    marginTop: hp(6),
-    alignSelf: "center",
-  },
-  counter: {
-    fontFamily: "Poppins_700Bold",
+    fontSize: hp(1.6),
     color: "#EEEEEE",
-    fontSize: hp(6.4),
-    alignSelf: "center",
-    marginTop: hp(-1),
-  },
-  add: {
-    width: wp(60),
-    height: hp(30),
-    alignSelf: "center",
-    marginTop: hp(20),
-  },
-  reset: {
-    width: wp(17),
-    height: hp(8),
-    marginTop: hp(-2),
   },
 });

@@ -109,7 +109,7 @@ const Home = ({ navigation }) => {
         >
           <TouchableOpacity
             style={styles.home}
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate("Home")}
           >
             <Image
               source={require("../assets/home-icon-purple.png")}
@@ -134,15 +134,15 @@ const Home = ({ navigation }) => {
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
           </TouchableOpacity>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             style={styles.dua}
-            onPress={() => Alert.alert("Duas Coming Soon!")}
+            onPress={() => navigation.navigate("Duas")}
           >
             <Image
               source={require("../assets/dua-icon-grey.png")}
               style={{ width: "100%", height: "100%", resizeMode: "contain" }}
             />
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     flex: 0.12,
     backgroundColor: "#121931",
     justifyContent: "center",
-    paddingHorizontal: wp(10),
+    paddingHorizontal: wp(6),
   },
   home: {
     width: wp(12),

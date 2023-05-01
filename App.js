@@ -27,6 +27,7 @@ import { View } from "react-native";
 import Settings from "./pages/Settings";
 import Bookmark from "./pages/Bookmark";
 import MyContext from "./MyContext";
+import Duas from "./pages/Duas";
 
 I18nManager.allowRTL(true);
 
@@ -73,6 +74,7 @@ export default function App() {
           <Stack.Screen name="Tasbih" component={Tasbih} />
           <Stack.Screen name="Settings" component={Settings} />
           <Stack.Screen name="Bookmark" component={Bookmark} />
+          <Stack.Screen name="Duas" component={Duas} />
         </Stack.Navigator>
       </NavigationContainer>
     </MyContext>
