@@ -1,17 +1,16 @@
 import { useNavigation } from '@react-navigation/native'
-import { Image } from 'expo-image'
-import React, { useContext } from 'react'
+import React, { useState, memo, useEffect, useContext } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen'
 import { AppContext } from '../../MyContext'
+import { Image } from 'expo-image'
 
-const RenderItem = ({ item, index, type, setBookmarkItem, setIsVisible2 }) => {
+const RenderItem = ({ text, id, mine }) => {
     const navigation = useNavigation()
     const { blurhash } = useContext(AppContext)
-
     return (
         <TouchableOpacity
             style={{
@@ -23,16 +22,12 @@ const RenderItem = ({ item, index, type, setBookmarkItem, setIsVisible2 }) => {
                 borderBottomWidth: 1,
                 marginBottom: hp(1.5),
             }}
-            onPress={() => {
-                if (type == 'hide')
-                    navigation.navigate('QuranInfo', {
-                        page_number: item.page_number,
-                    })
-                else {
-                    setBookmarkItem(item)
-                    setIsVisible2(true)
-                }
-            }}
+            onPress={() =>
+                navigation.navigate('DuasInfo', {
+                    subcategory: text,
+                    mine: mine,
+                })
+            }
         >
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Image
@@ -50,14 +45,13 @@ const RenderItem = ({ item, index, type, setBookmarkItem, setIsVisible2 }) => {
                         fontFamily: 'Poppins_500Medium',
                         color: '#EEEEEE',
                         fontSize: hp(1.4),
-
                         width: wp(8),
                         textAlign: 'center',
                         left: wp(1),
-                        top: hp(1.3),
+                        alignSelf: 'center',
                     }}
                 >
-                    {index + 1}
+                    {id}
                 </Text>
                 <View style={{ marginLeft: wp(4) }}>
                     <Text
@@ -65,32 +59,13 @@ const RenderItem = ({ item, index, type, setBookmarkItem, setIsVisible2 }) => {
                             fontFamily: 'Poppins_500Medium',
                             color: '#EEEEEE',
                             fontSize: hp(1.6),
+                            width: wp(74),
                         }}
                     >
-                        {item.bookmark_name}
-                    </Text>
-
-                    <Text
-                        style={{
-                            fontFamily: 'Poppins_500Medium',
-                            color: '#A19CC5',
-                            fontSize: hp(1.2),
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        {`verse ${item.verse_number}`}
+                        {text}
                     </Text>
                 </View>
             </View>
-            <Text
-                style={{
-                    fontFamily: 'Poppins_500Medium',
-                    color: '#A44AFF',
-                    fontSize: hp(1.6),
-                }}
-            >
-                {item.chapter_name}
-            </Text>
         </TouchableOpacity>
     )
 }
