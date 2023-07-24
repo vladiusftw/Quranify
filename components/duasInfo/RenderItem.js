@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     ar: {
-        fontFamily: 'Poppins_500Medium',
+        fontFamily: 'Poppins_600SemiBold',
         fontSize: hp(1.8),
         writingDirection: 'rtl',
         color: '#EEEEEE',
         marginBottom: hp(2),
-        lineHeight: 24,
+        lineHeight: 30,
     },
     en: {
         fontFamily: 'Poppins_500Medium',

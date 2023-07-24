@@ -96,6 +96,6 @@ const styles = StyleSheet.create({
         color: '#EEEEEE',
         width: '100%',
         paddingHorizontal: wp(6),
-        lineHeight: 35,
+        lineHeight: hp(3.6),
     },
 })

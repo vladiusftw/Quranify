@@ -1,36 +1,36 @@
 {
-  "expo": {
-    "name": "Quranify",
-    "slug": "Quranify",
-    "version": "1.0.5",
-    "orientation": "portrait",
-    "icon": "./assets/quranify-logo.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/quranify-logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#121931"
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.pagepro.quranify",
-      "buildNumber": "1.0.4"
-    },
-    "android": {
-      "package": "com.pagepro.quranify",
-      "versionCode": 6
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "8c51944a-2e51-49a2-864e-e9ee0c0af4ad"
-      }
-    },
-    "packagerOpts": {
-      "sourceExts": ["cjs"]
+    "expo": {
+        "name": "Quranify",
+        "slug": "Quranify",
+        "version": "1.0.6",
+        "orientation": "portrait",
+        "icon": "./assets/quranify-logo.png",
+        "userInterfaceStyle": "light",
+        "splash": {
+            "image": "./assets/quranify-logo.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#121931"
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.pagepro.quranify",
+            "buildNumber": "1.0.5"
+        },
+        "android": {
+            "package": "com.pagepro.quranify",
+            "versionCode": 7
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        },
+        "extra": {
+            "eas": {
+                "projectId": "8c51944a-2e51-49a2-864e-e9ee0c0af4ad"
+            }
+        },
+        "packagerOpts": {
+            "sourceExts": ["cjs"]
+        }
     }
-  }
 }
